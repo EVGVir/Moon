@@ -144,7 +144,7 @@ begin
                       end;
                    line(rcx,rcy,rcx+2,rcy-1);
               end;
-           delay(150);
+           delay(650);
            cleardevice;
            {условия победы}
            if (y=384) and (x>550) and (x<590) then goto vin
