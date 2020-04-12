@@ -1,6 +1,6 @@
 program moon;
 uses
-    crt,graph;
+    ptccrt,ptcgraph;
 var
    driver,mode,level,x,y,vy,vx,rnx,rny,rvx,rvy,rcx,rcy,rwx,rwy: integer;
    answer: string;
@@ -13,8 +13,9 @@ begin
      write('Введите уровень сложности (1,2,3,4): ');
      readln(level);
      bgn:
-     driver:=detect;
-     initgraph(driver,mode,'d:\bp7.0\bgi');
+     driver:=VGA;
+     mode:=VGAHi;
+     initgraph(driver,mode,'');
      x:=320;
      y:=0;
      vx:=513;
@@ -44,7 +45,9 @@ begin
            line(540,400,600,400);   {в линия}
            line(540,400,510,430);   {л линия}
            line(600,400,630,430);   {п линия}
-           arc(506,420,250,20,10);  {антена}
+           {антена}
+           arc(506,420,250,360,10);
+           arc(506,420,0,20,10);
            line(513,427,508,422);   {палочка в антене}
            line(vx,vy,vx-5,vy-5);   {волна}
            if vy<0 then
